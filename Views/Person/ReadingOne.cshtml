@@ -1,0 +1,110 @@
+﻿@model Fric_frac.Models.FricFrac.Person
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Person/InsertOne" method="post">
+
+    <div class="detail">
+
+        <div class="command-panel">
+            <h2 class="banner">Persoon</h2>
+            <a href="/Person/UpdatingOne/@Model.Id" class="tile">
+                <i class="fas fa-edit"></i>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/Person/InsertingOne" class="tile">
+                <i class="fas fa-plus-square"></i>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/Person/DeleteOne/@Model.Id" class="tile">
+                <i class="fas fa-trash-alt"></i>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/Person/Cancel" class="tile">
+                <i class="fas fa-window-close"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <table>
+                <div>
+                    <label for="Person-FirstName">Voornaam</label>
+                    <span>@Model.FirstName</span>
+                
+                </div>
+                <div>
+                    <label for="Person-LastName">Familienaam</label>
+                    <span>@Model.LastName</span>
+                </div>
+                <div>
+                    <label for="Person-Email">E-mail</label>
+                    <span>@Model.Email</span>
+                </div>
+                <div>
+                    <label for="Person-Address1">Adres 1</label>
+                    <span>@Model.Address1</span>
+                </div>
+                <div>
+                    <label for="Person-Address2">Adres 2</label>
+                    <span>@Model.Address2</span>
+                </div>
+                <div>
+                    <label for="Person-PostalCode">Postcode</label>
+                    <span>@Model.PostalCode</span>
+                </div>
+                <div>
+                    <label for="Person-City">Stad</label>
+                    <span>@Model.City</span>
+                </div>
+                <div>
+                    <label for="Person-Country">Land</label>
+                    <span>@Model.Country.Name</span>
+                </div>
+                <div>
+                    <label for="Person-Phone1">Telefoon</label>
+                    <span>@Model.Phone1</span>
+                </div>
+                <div>
+                    <label for="Person-Birthday">Geboortedatum</label>
+                    <span>@Model.Birthday</span>
+                </div>
+            </table>
+
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Personen)
+                {
+                    <tr>
+                        <td>
+                            @item.FirstName
+                        </td>
+
+                        <td>
+                            @item.LastName
+                        </td>
+
+
+                        <td>
+                            <a href="/Person/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </aside>
+</form>

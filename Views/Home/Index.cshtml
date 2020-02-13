@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section >
+    <p><a href="/Admin/Index" class="btn btn-primary">Beheer</a></p>
+    <span>click beheer button to see project realisation</span>
+</section>
+
+<h1>Fric-frac Conceptueel model</h1>
+
+<div >Een gegevensmodel is een grafische weergave voor de oplossing van een probleem, zoals aangenomen door een bepaalde gemeenschap.</div>
+
+<h2>UML Entity Relationship diagram</h2>
+
+<p>We gebruiken een UML ERD en een gewoon ERD om het conceptueel model voor te stellen.</p>
+
+<p>Een conceptueel model:</p>
+
+<ul >
+    <li>legt de functionele en informatieve behoeften van een bedrijf vast</li>
+    <li>is gebaseerd op de huidige behoeften, maar weerspiegelt ook de toekomst</li>
+    <li>wordt een 'entiteitverwantschapsmodel' genoemd</li>
+</ul>
+
+<p>Het conceptueel model speelt een belangrijke rol omdat</p>
+
+<ul >
+    <li>het de informatiebehoeften van een bedrijf nauwkeurig en volledig beschrijft op een manier die door heel veel mensen begrepen kan worden;</li>
+    <li>de discussie vergemakkelijkt;</li>
+    <li>fouten en misverstanden voorkomt;</li>
+    <li>een goede basis vormt voor fysieke het database ontwerp;</li>
+    <li>de processen (ook bekend als de "business rules") van het bedrijf gedeeltelijk documenteert;</li>
+</ul>
+
+<h3>Entiteiten</h3>
+
+<p>Een entiteit is:</p>
+
+<ul >
+    <li>"iets" dat van wezenlijke betekenis is voor een gemeenschap (bedrijf, business, organisatie)</li>
+    <li>een naam voor een verzameling van soortgelijke dingen die je kan oplijsten</li>
+    <li>wordt meestal weergegeven met een zelfstandig naamwoord, voorbeelden: objecten, gebeurtenissen, personen</li>
+    <li>entiteiten hebben exemplaren, ook wel instanties genoemd. Eén exemplaar is het voorkomen van een element van een entiteit</li>
+</ul>
+
+<p>Symbool voor een entiteit:</p>
+
+<ul>
+    <li value="1">Entiteiten worden voorgesteld door softboxen.</li>
+    <li>Entiteitsnamen gaan in de softboxen.</li>
+    <li>Entiteitsnamen zijn altijd in het enkelvoud</li>
+    <li>en worden in pascalnotatie geschreven.</li>
+</ul>
+
+<h3>Attributen</h3>
+
+<p>Een attribuut is een eigenschap van een entiteit die de kenmerken van een bepaald exemplaar van een entiteit beschrijft. Een <strong>unique Identifier</strong>, een UID is een kenmerk waarvan de waarde een bepaald exemplaar van een entiteit identificeert. Attributen worden in ovalen rond de entiteit geschreven. Een UID is onderstreept. Meestal is dit een zelfstandig naamwoord.</p>
+
+<h3>Verwantschappen</h3>
+
+<p>Verwantschappen drukken een relatie tussen entiteiten uit. Deze relatie heeft niet dezelfde betekenis als relatie in relationele databanken. Meestal is dit een werkwoord.</p>
+
+<h2>UML ERD</h2>
+
+<figure>
+    <img alt="fric-frac uml erd" src="~/images/fric-frac uml erd.png" />
+    <figcaption>fric-frac uml erd</figcaption>
+</figure>
+
+<p>De relaties tussen de entiteiten kunnen we als volgt lezen:</p>
+
+<ul>
+    <li>een Event heeft één en slechts één EventTopic;</li>
+    <li>een Event heeft slechts één en slechts één EventCategory;</li>
+    <li>er kunnen EventTopics bestaan die aan geen enkel event gekoppeld zijn;</li>
+    <li>er kunnen EventCategories bestaan die aan geen enkel event gekoppeld zijn;</li>
+    <li>verschillende Events kunnen dezelfde EventTopic delen;</li>
+    <li>verschillende Events kunnen dezelfde EventCategory delen;</li>
+    <li>Een Person heeft geen of meerdere Events;</li>
+    <li>Een Event is gelanceerd door 1 Person;</li>
+    <li>Een Person heeft 1 en slechts 1 User;</li>
+    <li>Een User heeft minstens 1 Role</li>
+</ul>
+
+<h2>ERD</h2>
+
+<figure>
+    <img alt="fric-frac erd" src="~/images/fric-frac erd.png" />
+    <figcaption>fric-frac erd</figcaption>
+</figure>

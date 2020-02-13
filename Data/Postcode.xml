@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPostcode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Postcode>
+    <Code>1495</Code>
+    <Plaats>VILLERS-LA-VILLE</Plaats>
+    <Provincie>Waals-Brabant</Provincie>
+    <Localite>VILLERS-LA-VILLE</Localite>
+    <Province>Brabant Wallon</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1500</Code>
+    <Plaats>HALLE</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>HALLE</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1501</Code>
+    <Plaats>Buizingen</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Buizingen</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1502</Code>
+    <Plaats>Lembeek</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Lembeek</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1540</Code>
+    <Plaats>Herfelingen</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Herfelingen</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1540</Code>
+    <Plaats>HERNE</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>HERNE</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1541</Code>
+    <Plaats>Sint-Pieters-Kapelle</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Sint-Pieters-Kapelle</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1547</Code>
+    <Plaats>BEVER</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>BIÉVÈNE</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1560</Code>
+    <Plaats>HOEILAART</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>HOEILAART</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1570</Code>
+    <Plaats>GALMAARDEN</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>GALMAARDEN</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1570</Code>
+    <Plaats>Tollembeek</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Tollembeek</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1570</Code>
+    <Plaats>Vollezele</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Vollezele</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1600</Code>
+    <Plaats>Oudenaken</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Oudenaken</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1600</Code>
+    <Plaats>Sint-Laureins-Berchem</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>Sint-Laureins-Berchem</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+  <Postcode>
+    <Code>1600</Code>
+    <Plaats>SINT-PIETERS-LEEUW</Plaats>
+    <Provincie>Vlaams-Brabant</Provincie>
+    <Localite>SINT-PIETERS-LEEUW</Localite>
+    <Province>Brabant Flamand</Province>
+  </Postcode>
+</ArrayOfPostcode>

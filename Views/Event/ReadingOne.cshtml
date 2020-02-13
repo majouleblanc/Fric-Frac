@@ -1,0 +1,104 @@
+﻿@model Fric_frac.Models.FricFrac.Event
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Event/InsertOne" method="post">
+
+    <div class="detail">
+
+        <div class="command-panel">
+            <h2 class="banner">Event</h2>
+            <a href="/Event/UpdatingOne/@Model.Id" class="tile">
+                <i class="fas fa-edit"></i>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/Event/InsertingOne" class="tile">
+                <i class="fas fa-plus-square"></i>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/Event/DeleteOne/@Model.Id" class="tile">
+                <i class="fas fa-trash-alt"></i>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/Event/Cancel" class="tile">
+                <i class="fas fa-window-close"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Event-Name">Name</label>
+                <span>@Model.Name</span>
+            </div>
+            <div>
+                <label for="Event-Location">Location</label>
+                <span>@Model.Location</span>
+            </div>
+            <div>
+                <label for="Event-Starts">Starts</label>
+                <span>@Model.Starts</span>
+            </div>
+            <div>
+                <label for="Event-Ends">Ends</label>
+                <span>@Model.Ends</span>
+            </div>
+            <div>
+                <label for="Event-Image">Image</label>
+                <span>@Model.Image</span>
+            </div>
+            <div>
+                <label for="Event-Description">Event Description</label>
+                <span>@Model.Description</span>
+            </div>
+            <div>
+                <label for="Event-OrganiserName">Organiser Name</label>
+                <span>@Model.OrganiserName</span>
+
+            </div>
+            <div>
+                <label for="Event-OrganiserDescription">Organiser Description</label>
+                <span>@Model.OrganiserDescription</span>
+
+            </div>
+            <div>
+                <label for="Event-EventCategoryId">Event Categories</label>
+                <span>@Model.Eventcategory.Name</span>
+            </div>
+            <div>
+                <label for="Event-EventTopicId">Event Topic</label>
+                <span>@Model.Eventtopic.Name</span>
+            </div>
+
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Events)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+
+                        <td>
+                            <a href="/Event/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

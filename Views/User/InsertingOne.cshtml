@@ -1,0 +1,89 @@
+﻿@model Fric_frac.Models.FricFrac.User
+
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/User/InsertOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">User</h2>
+            <button type="submit" value="/User/InsertOne" class="tile">
+                <i class="fas fa-folder-plus"></i>
+                <span class="screen-reader-text">Insert One</span>
+            </button>
+            <a href="/User/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="User-Name">Name</label>
+                <input id="User-Name" name="User-Name" type="text" value="" required />
+            </div>
+            <div>
+                <label for="User-Salt">Salt</label>
+                <input id="User-Salt" name="User-Salt" type="text" value="" required />
+            </div>
+            <div>
+                <label for="User-HashedPassword">Password</label>
+                <input id="User-HashedPassword" name="User-HashedPassword" type="password" value="" required />
+            </div>
+
+
+            <div>
+                <label for="User-PersonId">Persons</label>
+                <select id="User-PersonId" name="User-PersonId">
+                    @foreach (var item in ViewBag.Persons)                 /*--------------*/
+                    {
+                    <option value="@item.Id">@item.FirstName  @item.LastName</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="User-RoleId">Rollen</label>
+                <select id="User-RoleId" name="User-RoleId">
+                    @foreach (var item in ViewBag.Rols)                 /*--------------*/
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+
+            <div>
+                <label for="User-Rating">Tevreden</label>
+                <input id="User-Rating" name="User-Rating" type="range" value="" />
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Users)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+
+                        <td>
+                            <a href="/User/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

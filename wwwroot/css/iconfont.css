@@ -1,0 +1,362 @@
+﻿/* ofwel verwijs je naar een lokaal geïnstalleerde font ofwel naar een font op een externe server
+het is één van de twee en niet allebei, voor een Cordova app installeer je font beter lokaal */
+
+/* verwijzing naar lokaal geïnstalleerde font */
+@font-face {
+    font-family: 'tower-pattern';
+    src: url('fonts/tower-pattern.ttf?tyzv4w') format('truetype'), url('fonts/tower-pattern.woff?tyzv4w') format('woff'), url('fonts/tower-pattern.svg?tyzv4w#tower-pattern') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* verwijzing naar font op externe server*/
+@font-face {
+    font-family: 'tower-pattern';
+    src: url('http://tower-pattern-3.anormapart.com/css/icon-tower-pattern/fonts/tower-pattern.ttf?tyzv4w') format('truetype'), url('http://tower-pattern-3.anormapart.com/css/icon-tower-pattern/fonts/tower-pattern.woff?tyzv4w') format('woff'), url('http://tower-pattern-3.anormapart.com/css/icon-tower-pattern/fonts/tower-pattern.svg?tyzv4w#tower-pattern') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* a little usability fix applied via class, and a toolbox class
+for hiding the text but leaving it accessible */
+.iconlink {
+    display: inline-block; /* Fix for clickability issue in WebKit */
+    margin-right: 1.2%;
+}
+
+/* accessability */
+.screen-reader-text {
+    /* Reusable, toolbox kind of class
+voor screen readers, op die manier
+kunnen de readers lezen waarvoor
+de knop staat; de tekst is zelf
+niet zichtbaar op het scherm door negatieve
+waarden toe te kennen aan top en left */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+/*
+“Substring Matching Attribute Selectors”.
+These new selectors are as follows:
+[att^=val] – the “begins with” selector
+[att$=val] – the “ends with” selector
+[att*=val] – the “contains” selector
+
+    http://www.css3.info/preview/attribute-selectors/
+*/
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'tower-pattern' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ambulance:before {
+    content: "\e600";
+}
+
+.icon-skull:before {
+    content: "\e601";
+}
+
+.icon-medicine:before {
+    content: "\e602";
+}
+
+.icon-lightning:before {
+    content: "\e603";
+}
+
+.icon-droplet2:before {
+    content: "\e604";
+}
+
+.icon-chat:before {
+    content: "\e605";
+}
+
+.icon-warning:before {
+    content: "\e606";
+}
+
+.icon-bomb:before {
+    content: "\e607";
+}
+
+.icon-injection:before {
+    content: "\e608";
+}
+
+.icon-chat2:before {
+    content: "\e609";
+}
+
+.icon-local_taxi:before {
+    content: "\e60a";
+}
+
+.icon-paperplane:before {
+    content: "\e60b";
+}
+
+.icon-send:before {
+    content: "\e60c";
+}
+
+.icon-ruler:before {
+    content: "\e60d";
+}
+
+.icon-enter:before {
+    content: "\e60e";
+}
+
+.icon-exit:before {
+    content: "\e60f";
+}
+
+.icon-pencil:before {
+    content: "\e610";
+}
+
+.icon-image:before {
+    content: "\e611";
+}
+
+.icon-images:before {
+    content: "\e612";
+}
+
+.icon-book:before {
+    content: "\e613";
+}
+
+.icon-books:before {
+    content: "\e614";
+}
+
+.icon-file:before {
+    content: "\e615";
+}
+
+.icon-copy:before {
+    content: "\e616";
+}
+
+.icon-stack:before {
+    content: "\e617";
+}
+
+.icon-folder:before {
+    content: "\e618";
+}
+
+.icon-folder-open:before {
+    content: "\e619";
+}
+
+.icon-notebook:before {
+    content: "\e61a";
+}
+
+.icon-disk:before {
+    content: "\e61b";
+}
+
+.icon-user:before {
+    content: "\e61c";
+}
+
+.icon-search:before {
+    content: "\e61d";
+}
+
+.icon-key:before {
+    content: "\e61e";
+}
+
+.icon-minus:before {
+    content: "\e61f";
+}
+
+.icon-plus:before {
+    content: "\e620";
+}
+
+.icon-arrow-up:before {
+    content: "\e621";
+}
+
+.icon-arrow-right:before {
+    content: "\e622";
+}
+
+.icon-arrow-down:before {
+    content: "\e623";
+}
+
+.icon-arrow-left:before {
+    content: "\e624";
+}
+
+.icon-bold:before {
+    content: "\e625";
+}
+
+.icon-underline:before {
+    content: "\e626";
+}
+
+.icon-italic:before {
+    content: "\e627";
+}
+
+.icon-paragraph-left:before {
+    content: "\e628";
+}
+
+.icon-paragraph-center:before {
+    content: "\e629";
+}
+
+.icon-paragraph-right:before {
+    content: "\e62a";
+}
+
+.icon-list:before {
+    content: "\e62b";
+}
+
+.icon-numbered-list:before {
+    content: "\e62c";
+}
+
+.icon-menu:before {
+    content: "\e62d";
+}
+
+.icon-menu2:before {
+    content: "\e62e";
+}
+
+.icon-print:before {
+    content: "\e62f";
+}
+
+.icon-remove:before {
+    content: "\e630";
+}
+
+.icon-link:before {
+    content: "\e631";
+}
+
+.icon-scissors:before {
+    content: "\e632";
+}
+
+.icon-close:before {
+    content: "\e633";
+}
+
+.icon-pencil2:before {
+    content: "\e634";
+}
+
+.icon-undo:before {
+    content: "\e635";
+}
+
+.icon-redo:before {
+    content: "\e636";
+}
+
+.icon-file-xml:before {
+    content: "\e637";
+}
+
+.icon-file-css:before {
+    content: "\e638";
+}
+
+.icon-html5:before {
+    content: "\e639";
+}
+
+.icon-css3:before {
+    content: "\e63a";
+}
+
+.icon-mail:before {
+    content: "\e63b";
+}
+
+.icon-indent-increase:before {
+    content: "\e63c";
+}
+
+.icon-indent-decrease:before {
+    content: "\e63d";
+}
+
+.icon-table:before {
+    content: "\e63e";
+}
+
+.icon-paste:before {
+    content: "\e63f";
+}
+
+.icon-spoon-knife:before {
+    content: "\e640";
+}
+
+.icon-opt:before {
+    content: "\e641";
+}
+
+.icon-users:before {
+    content: "\e642";
+}
+
+.icon-compass:before {
+    content: "\e643";
+}
+
+.icon-wrench:before {
+    content: "\e644";
+}
+
+.icon-cogs:before {
+    content: "\e645";
+}
+
+.icon-truck:before {
+    content: "\e646";
+}
+
+.icon-phone:before {
+    content: "\e647";
+}
+
+.icon-bell:before {
+    content: "\e648";
+}
+
+.icon-aid-kit:before {
+    content: "\e649";
+}
+
+.icon-fire:before {
+    content: "\e64a";
+}

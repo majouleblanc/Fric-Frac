@@ -1,0 +1,194 @@
+﻿html {
+    width: 100%;
+}
+
+.tower {
+    font-family: Verdana, sans-serif;
+    width: 100%;
+    background-color: rgba(249, 246, 244, 0.9);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.floor {
+    width: 90%;
+    opacity: 0.9;
+    margin: 0 5% 0 5%;
+    background-color: rgb(204,204,204);
+}
+
+.control-panel {
+    display: flex;
+    justify-content: flex-start;
+    height: 11%;
+    background-color: rgb(250,240,230);
+    padding: 0 1em 0 0;
+}
+
+    .control-panel .banner {
+        margin-left: auto;
+    }
+
+a.tile {
+    text-decoration: none;
+}
+
+.control-panel .tile {
+    margin: 2px;
+    padding: 4px 4px 0 4px;
+    overflow: hidden;
+    background-color: #3b444b; /*arsenic*/
+    font-size: 6.5vh;
+    color: rgb(249,246,244); /* orange red peach spring wood */
+    align-self: center;
+}
+
+    .control-panel .tile:hover {
+        color: rgb(226,69,16); /* realgar */
+        cursor: pointer;
+    }
+
+.screen-reader-text {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.show-room.index {
+    display: flex;
+    width: 100%;
+}
+
+    .show-room.index .tile {
+        margin: 0.5% 1%;
+        color: white;
+        height: 11em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* all the last times by mierlagypsy */
+        background-color: rgb(195,94,77);
+        overflow: hidden;
+        text-shadow: 2px 1px #0c0c0c;
+    }
+
+@media (orientation: landscape) {
+    .show-room.index {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+        .show-room.index .tile {
+            flex: 1 0 23%;
+        }
+
+            .show-room.index .tile:nth-child(3) {
+                flex-basis: 48%;
+            }
+}
+
+@media (orientation: portrait) {
+    .show-room.index {
+        flex-direction: column;
+    }
+
+        .show-room.index .tile:nth-child(3) {
+            order: 8;
+        }
+
+        .show-room.index .tile:nth-child(4) {
+            order: 9;
+        }
+
+        .show-room.index .tile:nth-child(7) {
+            order: 10;
+        }
+}
+
+.show-room.index .tile .fas {
+    font-size: 8vh;
+}
+
+.show-room.index a.tile {
+    background-color: rgb(222, 184, 135);
+}
+
+    .show-room.index a.tile:hover {
+        color: rgb(249,246,244); /* orange red peach spring wood */
+        background-color: rgb(65,74,76); /* outer space */
+    }
+
+/**--------------------------------------------person----------------------------------------*/
+
+.show-room.entity {
+    display: flex;
+    width: 100%;
+    background-color: rgb(250,235,215) /* antique white mocassin */
+}
+
+    .show-room.entity .detail {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0.5em 0 0.5em;
+        /*width: 10em;*/
+        flex: 2 1 20em;
+        background-color: rgb(255, 228, 196);
+    }
+
+    .show-room.entity .command-panel {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 2 1 2em;
+        padding: 0 0.5em 0 0.5em;
+        background-color: rgb(222, 184, 135);
+    }
+
+        .show-room.entity .command-panel .tile {
+            margin: 0 2px 0 0;
+            padding: 4px 4px 4px 4px;
+            background-color: #3b444b; /*arsenic*/
+            color: rgb(249,246,244); /* orange red peach spring wood */
+        }
+
+.command-panel .banner {
+    margin-right: auto;
+}
+
+.show-room.entity .command-panel .tile .fas {
+    font-size: 6vh;
+}
+
+.show-room.entity .command-panel a.tile:hover {
+    color: rgb(226,69,16); /* realgar */
+    cursor: pointer;
+}
+
+.show-room.entity .list {
+    flex: 1 1 10em;
+    min-height: 40em;
+    background-color: rgb(240, 234, 214); /* eggshell */
+}
+
+.show-room.entity .detail fieldset {
+    flex: 2 1 2em;
+    min-height: 40em;
+}
+
+.show-room.entity .detail .feedback {
+    flex: 2 1 2em;
+    background-color: rgb(195,94,77);
+    min-height: 2em;
+}
+
+
+tr: nth-child(even) {
+    background: #CCC
+}
+
+tr:nth-child(odd) {
+    background: #FFF
+}

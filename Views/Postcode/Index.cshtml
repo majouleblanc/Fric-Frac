@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<BLL.Postcode>
+
+    <h1>@ViewBag.Title</h1>
+
+<table boder="1" class="list">
+    <thead>
+        <tr>
+            <th><a href="/Postcode/PostcodeOrder">@Html.Raw(ViewBag.Postcode)</a></th>
+            <th class="pl-5"><a href="/Postcode/PlaatsOrder">@Html.Raw(ViewBag.Plaats)</a></th>
+            <th class="pl-5"><a href="/Postcode/ProvincieOrder">@Html.Raw(ViewBag.Provincie)</a></th>
+            <th class="pl-5"><a href="/Postcode/LocaliteOrder">@Html.Raw(ViewBag.Localite)</a></th>
+            <th class="pl-5"><a href="/Postcode/ProvinceOrder">@Html.Raw(ViewBag.Province)</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Code
+                </td>
+                <td class="pl-5">
+                    @item.Plaats
+                </td>
+                <td class="pl-5">
+                    @item.Provincie
+                </td>
+                <td class="pl-5">
+                    @item.Localite
+                </td>
+                <td class="pl-5">
+                    @item.Province
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

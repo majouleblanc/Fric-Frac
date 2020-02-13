@@ -1,0 +1,62 @@
+﻿@model Fric_frac.Models.FricFrac.Eventtopic
+
+@{
+    ViewData["Title"] = "InsertingOne";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+
+<form class="show-room entity" action="/EventTopic/InsertOne" method="post">
+
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">EventTopic</h2>
+
+
+            <button type="submit" value="/EventTopic/InsertOne" class="tile">
+                <i class="fas fa-folder-plus"></i>
+                <span class="screen-reader-text">Insert One</span>
+            </button>
+
+            <a href="/EventTopic/Cancel" class="tile">
+                <i class="fas fa-window-close"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+
+
+        <fieldset>
+            <div>
+                <label for="EventTopic-Name">Naam</label>
+                <input id="EventTopic-Name" name="EventTopic-Name" type="text" value="" required />
+            </div>
+
+        </fieldset>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.EventTopics)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+                        <td>
+                            <a href="/Eventtopic/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

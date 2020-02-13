@@ -1,0 +1,56 @@
+﻿@model Fric_frac.Models.FricFrac.Role
+
+@{
+    ViewData["Title"] = "UpdatingOne";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile _14x1">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+
+<form class="show-room entity" action="/Role/UpdateOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Role</h2>
+            <button type="submit" class="tile">
+                <i class="fas fa-save"></i>
+                <span class="screen-reader-text">Update One</span>
+            </button>
+            <a href="/Role/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <input type="hidden" id="Role-Id" name="Role-Id" value="@Model.Id" />
+            <div>
+                <label for="Role-Name">Naam</label>
+                <input id="Role-Name" name="Role-Name" type="text" value="@Model.Name" required />
+            </div>
+        </fieldset>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Roles)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+                        <td>
+                            <a href="/Role/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

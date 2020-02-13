@@ -1,0 +1,57 @@
+﻿@model Fric_frac.Models.FricFrac.Role
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Role/InsertOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Role</h2>
+
+            <button type="submit" value="/Role/InsertOne" class="tile">
+                <i class="fas fa-folder-plus"></i>
+                <span class="screen-reader-text">Insert One</span>
+            </button>
+
+            <a href="/Role/Cancel" class="tile">
+                <i class="fas fa-window-close"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Role-Name">Naam</label>
+                <input id="Role-Name" name="Role-Name" type="text" value="" required />
+            </div>
+
+        </fieldset>
+
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Roles)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+                        <td>
+                            <a href="/Role/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

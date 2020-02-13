@@ -1,0 +1,123 @@
+﻿@model Fric_frac.Models.FricFrac.Event
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile _14x1">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+
+<form class="show-room entity" action="/Event/UpdateOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Event</h2>
+            <button type="submit" class="tile">
+                <i class="fas fa-save"></i>
+                <span class="screen-reader-text">Update One</span>
+            </button>
+            <a href="/Event/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+
+        <fieldset>
+            <input type="hidden" id="Event-Id" name="Event-Id" value="@Model.Id" />
+            <div>
+                <label for="Event-Name">Name</label>
+                <input id="Event-Name" name="Event-Name" type="text" value="@Model.Name" required />
+            </div>
+            <div>
+                <label for="Event-Location">Location</label>
+                <input id="Event-Location" name="Event-Location" type="text" value="@Model.Location" required />
+            </div>
+
+            <div>
+                <label for="Event-Starts">Starts</label>
+                <input id="Event-Starts" name="Event-Starts" type="date" 
+                       value="@Model.Starts.Value.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <div>
+                <label for="Event-Ends">Ends</label>
+                <input id="Event-Ends" name="Event-Ends" type="date" 
+                       value="@Model.Ends.Value.ToString("yyyy-MM-dd")" />
+            </div>
+
+
+            <div>
+                <label for="Event-Image">Image</label>
+                <input id="Event-Image" name="Event-Image" type="text" value="@Model.Image" />
+            </div>
+            <div>
+                <label for="Event-Description">Event Description</label>
+                <textarea id="Event-Description" name="Event-Description">@Model.Description</textarea>
+            </div>
+            <div>
+                <label for="Event-OrganiserName">OrganiserName</label>
+                <input id="Event-OrganiserName" name="Event-OrganiserName" type="text" value="@Model.OrganiserName" />
+            </div>
+            <div>
+                <label for="Event-OrganiserDescription">Organiser Description</label>
+                <textarea id="Event-OrganiserDescription" name="Event-OrganiserDescription">@Model.OrganiserDescription</textarea>
+            </div>
+
+            <div>
+                <label for="Event-EventCategoryId">Event Categories</label>
+                <select id="Event-EventCategoryId" name="Event-EventCategoryId">
+                    @foreach (var item in ViewBag.Eventcategories)
+                    {
+                        <option value="@item.Id"
+                                selected="@(item.Id == Model.EventcategoryId ? true : false)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+
+            <div>
+                <label for="Event-EventTopicId">Event Topic</label>
+                <select id="Event-EventTopicId" name="Event-EventTopicId">
+                    @foreach (var item in ViewBag.Eventtopics)
+                    {
+                        <option value="@item.Id"
+                                selected="@(item.Id == Model.EventtopicId ? true : false)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="Event-Rating">Tevreden</label>
+                <input id="Event-Rating" name="Event-Rating" type="range" value="" />
+            </div>
+
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Events)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+
+                        <td>
+                            <a href="/Event/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>

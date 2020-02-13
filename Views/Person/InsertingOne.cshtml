@@ -1,0 +1,105 @@
+﻿@model Fric_frac.Models.FricFrac.Person
+
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Person/InsertOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Persoon</h2>
+            <button type="submit" value="/Person/InsertOne" class="tile">
+                <i class="fas fa-folder-plus"></i>
+                <span class="screen-reader-text">Insert One</span>
+            </button>
+            <a href="/Person/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Person-FirstName">Voornaam</label>
+                <input id="Person-FirstName" name="Person-FirstName" type="text" value="" required />
+            </div>
+            <div>
+                <label for="Person-LastName">Familienaam</label>
+                <input id="Person-LastName" name="Person-LastName" type="text" value="" required />
+            </div>
+            <div>
+                <label for="Person-Email">E-mail</label>
+                <input id="Person-Email" name="Person-Email" type="email" value="" />
+            </div>
+            <div>
+                <label for="Person-Address1">Adres 1</label>
+                <input id="Person-Address1" name="Person-Address1" type="text" value="" />
+            </div>
+            <div>
+                <label for="Person-Address2">Adres 2</label>
+                <input id="Person-Address2" name="Person-Address2" type="text" value="" />
+            </div>
+            <div>
+                <label for="Person-PostalCode">Postcode</label>
+                <input id="Person-PostalCode" name="Person-PostalCode" type="text" value="" />
+            </div>
+            <div>
+                <label for="Person-City">Stad</label>
+                <input id="Person-City" name="Person-City" type="text" value="" />
+            </div>
+            <div>
+                <label for="Person-CountryId">Land</label>
+                <select id="Person-CountryId" name="Person-CountryId">
+                    @foreach (var item in ViewBag.Countries)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="Person-Phone1">Telefoon</label>
+                <input id="Person-Phone1" name="Person-Phone1" type="text" value="" />
+            </div>
+            <div>
+                <label for="Person-Birthday">Geboortedatum</label>
+                <input id="Person-Birthday" name="Person-Birthday" type="date" value="" />
+            </div>
+            <div>
+                <label for="Person-Rating">Tevreden</label>
+                <input id="Person-Rating" name="Person-Rating" type="range" value="" />
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Personen)
+                {
+                    <tr>
+                        <td>
+                            @item.FirstName
+                        </td>
+
+                        <td>
+                            @item.LastName
+                        </td>
+
+
+                        <td>
+                            <a href="/Person/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </aside>
+</form>

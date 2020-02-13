@@ -1,0 +1,108 @@
+﻿@model Fric_frac.Models.FricFrac.Person
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile _14x1">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+
+<form class="show-room entity" action="/Person/UpdateOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Persoon</h2>
+            <button type="submit" class="tile">
+                <i class="fas fa-save"></i>
+                <span class="screen-reader-text">Update One</span>
+            </button>
+            <a href="/Person/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <input type="hidden" id="Person-Id" name="Person-Id" value="@Model.Id" />
+
+            <div>
+                <label for="Person-FirstName">Voornaam</label>
+                <input id="Person-FirstName" name="Person-FirstName" type="text" value="@Model.FirstName" required />
+            </div>
+            <div>
+                <label for="Person-LastName">Familienaam</label>
+                <input id="Person-LastName" name="Person-LastName" type="text" value="@Model.LastName" required />
+            </div>
+            <div>
+                <label for="Person-Email">E-mail</label>
+                <input id="Person-Email" name="Person-Email" type="email" value="@Model.Email" />
+            </div>
+            <div>
+                <label for="Person-Address1">Adres 1</label>
+                <input id="Person-Address1" name="Person-Address1" type="text" value="@Model.Address1" />
+            </div>
+            <div>
+                <label for="Person-Address2">Adres 2</label>
+                <input id="Person-Address2" name="Person-Address2" type="text" value="@Model.Address2" />
+            </div>
+            <div>
+                <label for="Person-PostalCode">Postcode</label>
+                <input id="Person-PostalCode" name="Person-PostalCode" type="text" value="@Model.PostalCode" />
+            </div>
+            <div>
+                <label for="Person-City">Stad</label>
+                <input id="Person-City" name="Person-City" type="text" value="@Model.City" />
+            </div>
+            <div>
+                <label for="Person-CountryId">Land</label>
+                <select id="Person-CountryId" name="Person-CountryId">
+                    @foreach (var item in ViewBag.Countries)
+                    {
+                        <option value="@item.Id"
+                                selected="@(item.Id == Model.CountryId ? true : false)">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="Person-Phone1">Telefoon</label>
+                <input id="Person-Phone1" name="Person-Phone1" type="text" value="@Model.Phone1" />
+            </div>
+            <div>
+                <label for="Person-Birthday">Geboortedatum</label>
+                <input id="Person-Birthday" name="Person-Birthday" type="date"
+                       value="@Model.Birthday.Value.ToString("yyyy-MM-dd")" />
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Personen)
+                {
+                    <tr>
+                        <td>
+                            @item.FirstName
+                        </td>
+
+                        <td>
+                            @item.LastName
+                        </td>
+
+
+                        <td>
+                            <a href="/Person/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </aside>
+</form>

@@ -1,0 +1,80 @@
+﻿@model Fric_frac.Models.FricFrac.Country
+
+@{
+    ViewData["Title"] = "ReadingOne";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Country/InsertOne" method="post">
+
+
+    <div class="detail">
+
+        <div class="command-panel">
+            <h2 class="banner">Country</h2>
+            <a href="/Country/UpdatingOne/@Model.Id" class="tile">
+                <i class="fas fa-edit"></i>
+                <span class="screen-reader-text">Updating One</span>
+            </a>
+            <a href="/Country/InsertingOne" class="tile">
+                <i class="fas fa-plus-square"></i>
+                <span class="screen-reader-text">Inserting One</span>
+            </a>
+            <a href="/Country/DeleteOne/@Model.Id" class="tile">
+                <i class="fas fa-trash-alt"></i>
+                <span class="screen-reader-text">Delete One</span>
+            </a>
+            <a href="/Country/Cancel" class="tile">
+                <i class="fas fa-window-close"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+
+        <fieldset>
+            <div>
+                <label for="Country-Name">Naam</label>
+                <input id="Country-Name" name="Country-Name" type="text" value="@Model.Name" readonly>
+            </div>
+            <div>
+                <label for="Country-Code">Code</label>
+                <input id="Country-Code" name="Country-Code" type="text" value="@Model.Code" readonly />
+            </div>
+            <div>
+                <label for="Country-Desc">Desc</label>
+                <textarea id="Country-Desc" name="Country-Desc" readonly>@Model.Desc</textarea>
+            </div>
+        </fieldset>
+
+    </div>
+        <div class="feedback"></div>
+
+        <aside class="list">
+            <table>
+                <tbody>
+                    @foreach (var item in ViewBag.Countries)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Code
+                            </td>
+                            <td>
+                                <a href="/Country/ReadingOne/@item.Id">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </aside>
+</form>

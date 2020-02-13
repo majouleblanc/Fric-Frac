@@ -1,0 +1,111 @@
+﻿@model Fric_frac.Models.FricFrac.Event
+
+
+@{
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<nav class="control-panel">
+    <a href="/Home/Index" class="tile">
+        <i class="fas fa-bars"></i>
+        <span class="screen-reader-text">Home</span>
+    </a>
+    <h1 class="banner">Fric-frac</h1>
+</nav>
+
+<form class="show-room entity" action="/Event/InsertOne" method="post">
+    <div class="detail">
+        <div class="command-panel">
+            <h2 class="banner">Event</h2>
+            <button type="submit" value="/Event/InsertOne" class="tile">
+                <i class="fas fa-folder-plus"></i>
+                <span class="screen-reader-text">Insert One</span>
+            </button>
+            <a href="/Event/Cancel" class="tile">
+                <i class="fas fa-undo"></i>
+                <span class="screen-reader-text">Annuleren</span>
+            </a>
+        </div>
+        <fieldset>
+            <div>
+                <label for="Event-Name">Name</label>
+                <input id="Event-Name" name="Event-Name" type="text" value="" required />
+            </div>
+            <div>
+                <label for="Event-Location">Location</label>
+                <input id="Event-Location" name="Event-Location" type="text" value="" required />
+            </div>
+            <div>
+                <label for="Event-Starts">Starts</label>
+                <input id="Event-Starts" name="Event-Starts" type="date" value="" />
+            </div>
+            <div>
+                <label for="Event-Ends">Ends</label>
+                <input id="Event-Ends" name="Event-Ends" type="date" value="" />
+            </div>
+            <div>
+                <label for="Event-Image">Image</label>
+                <input id="Event-Image" name="Event-Image" type="text" value="" />
+            </div>
+            <div>
+                <label for="Event-Description">Event Description</label>
+                <textarea id="Event-Description" name="Event-Description"></textarea>
+            </div>
+            <div>
+                <label for="Event-OrganiserName">OrganiserName</label>
+                <input id="Event-OrganiserName" name="Event-OrganiserName" type="text" value="" />
+            </div>
+            <div>
+                <label for="Event-OrganiserDescription">Organiser Description</label>
+                <textarea id="Event-OrganiserDescription" name="Event-OrganiserDescription"></textarea>
+            </div>
+            <div>
+                <label for="Event-EventCategoryId">Event Categories</label>
+                <select id="Event-EventCategoryId" name="Event-EventCategoryId">
+                    @foreach (var item in ViewBag.Eventcategories)                 /*--------------*/
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label for="Event-EventTopicId">Event Topic</label>
+                <select id="Event-EventTopicId" name="Event-EventTopicId">
+                    @foreach (var item in ViewBag.Eventtopics)                 /*--------------*/
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+
+
+
+
+
+            <div>
+                <label for="Event-Rating">Tevreden</label>
+                <input id="Event-Rating" name="Event-Rating" type="range" value="" />
+            </div>
+        </fieldset>
+        <div class="feedback"></div>
+    </div>
+    <aside class="list">
+        <table>
+            <tbody>
+                @foreach (var item in ViewBag.Events)
+                {
+                    <tr>
+                        <td>
+                            @item.Name
+                        </td>
+
+
+                        <td>
+                            <a href="/Event/ReadingOne/@item.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </aside>
+</form>
